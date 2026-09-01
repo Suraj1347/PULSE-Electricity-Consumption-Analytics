@@ -1,0 +1,14 @@
+{
+  "raw_rows": 2075259,
+  "complete_rows": 2049280,
+  "incomplete_rows": 25979,
+  "missing_percentage": 1.25,
+  "duplicate_timestamps": 0,
+  "total_energy_kwh": 37283.75,
+  "avg_active_power_kw": 1.0916,
+  "peak_active_power_kw": 11.122,
+  "peak_timestamp": "2009-02-22 17:09:00",
+  "sub_metering_1_wh": 2299135.0,
+  "sub_metering_2_wh": 2661031.0,
+  "sub_metering_3_wh": 13235167.0
+}
