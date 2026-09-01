@@ -8,7 +8,7 @@ import HeatmapGrid from '../components/HeatmapGrid/HeatmapGrid';
 import './TemporalPatterns.css';
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
-const FP_DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const FP_DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 function HourlySection({ data }: { data: HourlyProfilePoint[] }) {
   const { ref, inView } = useInView(0.15);

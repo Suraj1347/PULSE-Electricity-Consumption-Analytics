@@ -119,7 +119,7 @@ export default function SubmeterIntelligence() {
 
                 {/* Center label */}
                 <div className="si-donut-center">
-                  <span className="si-donut-total">{totalKwh.toLocaleString()}</span>
+                  <span className="si-donut-total">{Math.round(totalKwh).toLocaleString()}</span>
                   <span className="si-donut-unit">kWh TOTAL</span>
                 </div>
               </div>

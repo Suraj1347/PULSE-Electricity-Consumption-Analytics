@@ -72,6 +72,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 150px;
   text-align: center;
   pointer-events: none;
 }
@@ -79,11 +80,12 @@
 .si-donut-total {
   display: block;
   font-family: var(--mono);
-  font-size: clamp(24px, 3vw, 36px);
+  font-size: clamp(18px, 2.4vw, 28px);
   font-weight: 500;
   color: var(--white);
   letter-spacing: -1px;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .si-donut-unit {

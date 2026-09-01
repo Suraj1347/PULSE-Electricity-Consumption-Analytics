@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from '../../hooks/useInView';
+import './HeatmapGrid.css';
 
 interface Cell {
   day: string;
