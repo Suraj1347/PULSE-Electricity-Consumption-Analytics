@@ -13,7 +13,8 @@ const NAV_ITEMS: NavItem[] = [
   { id: 'anomalies', label: 'Anomaly Radar', num: '04' },
   { id: 'submeter', label: 'Submeter', num: '05' },
   { id: 'engine', label: 'Data Engine', num: '06' },
-  { id: 'closing', label: 'Closing', num: '07' },
+  { id: 'live-stream', label: 'Live Stream', num: '07' },
+  { id: 'closing', label: 'Closing', num: '08' },
 ];
 
 export default function NavSidebar() {

@@ -1,0 +1,10 @@
+.git
+node_modules
+dist
+dist-ssr
+results
+public/data
+household_power_consumption.txt
+*.pptx
+*.docx
+*.md

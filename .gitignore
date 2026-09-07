@@ -48,3 +48,6 @@ household_power_consumption.txt
 
 # Spark output (copied to public/data/ at build time)
 results/
+
+# Live Kafka streaming snapshot (written continuously by spark-streaming)
+public/data/live_stream.json*

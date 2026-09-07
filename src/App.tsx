@@ -7,6 +7,7 @@ import TemporalPatterns from './sections/TemporalPatterns';
 import Anomalies from './sections/Anomalies';
 import SubmeterIntelligence from './sections/SubmeterIntelligence';
 import Engine from './sections/Engine';
+import LiveStream from './sections/LiveStream';
 import Final from './sections/Final';
 
 export default function App() {
@@ -36,6 +37,10 @@ export default function App() {
 
         <div id="engine">
           <Engine />
+        </div>
+
+        <div id="live-stream">
+          <LiveStream />
         </div>
 
         <div id="closing">

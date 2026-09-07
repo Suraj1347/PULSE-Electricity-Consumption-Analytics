@@ -38,6 +38,11 @@ INPUT_FILE = "hdfs:///pulse/raw/household_power_consumption.txt"
 RESULTS_DIR = "results"
 HDFS_OUTPUT = "hdfs:///pulse/output"
 
+# Overridable for the Dockerized cluster (see docker-compose.yml). Defaults
+# match the native Windows setup in hdfs_setup.ps1 (localhost, local mode).
+SPARK_MASTER_URL = os.environ.get("SPARK_MASTER_URL", "local[*]")
+HDFS_NAMENODE = os.environ.get("HDFS_NAMENODE", "hdfs://localhost:9000")
+
 # ============================================================
 # STEP 1: CREATE SPARK SESSION
 # ============================================================
@@ -48,11 +53,11 @@ print("=" * 60)
 
 spark = (
     SparkSession.builder
-    .master("local[*]")
+    .master(SPARK_MASTER_URL)
     .appName("PULSE-EnergyProcessing")
     .config("spark.sql.shuffle.partitions", "8")
     .config("spark.driver.memory", "2g")
-    .config("spark.hadoop.fs.defaultFS", "hdfs://localhost:9000")
+    .config("spark.hadoop.fs.defaultFS", HDFS_NAMENODE)
     .getOrCreate()
 )
 
@@ -421,7 +426,7 @@ os.makedirs(RESULTS_DIR, exist_ok=True)
 
 # --- HDFS output helper ---
 _hdfs_conf = spark._jvm.org.apache.hadoop.conf.Configuration()
-_hdfs_conf.set("fs.defaultFS", "hdfs://localhost:9000")
+_hdfs_conf.set("fs.defaultFS", HDFS_NAMENODE)
 _hdfs_fs = spark._jvm.org.apache.hadoop.fs.FileSystem.get(_hdfs_conf)
 
 def _write_to_hdfs(content, hdfs_path):

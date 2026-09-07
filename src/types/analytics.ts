@@ -52,3 +52,27 @@ export interface FingerprintRecord {
   hour: number;
   avg_kw: number;
 }
+
+export interface LiveReading {
+  timestamp: string;
+  global_active_power: number;
+  voltage: number | null;
+  global_intensity: number | null;
+  sub_metering_1: number;
+  sub_metering_2: number;
+  sub_metering_3: number;
+  produced_at: number;
+  consumed_at: number;
+}
+
+export interface LiveStreamPayload {
+  updated_at: number;
+  batch_id: number;
+  new_in_batch: number;
+  buffer_size: number;
+  latest: LiveReading;
+  avg_power_kw: number;
+  peak_power_kw: number;
+  min_power_kw: number;
+  recent: LiveReading[];
+}
